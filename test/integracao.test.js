@@ -1,7 +1,6 @@
 import app from '../src/app.js';
 import request from 'supertest';
 import axios from 'axios';
-
 import {
     afterEach,
     beforeEach,
@@ -10,21 +9,10 @@ import {
     vi,
     expect
 } from 'vitest';
-
 import { clearDatabase } from './utils/clearDatabase.js';
 import { MontadoraFactory } from './factories/MontadoraFactory.js';
 import { ClientFactory } from './factories/ClienteFactory.js';
 import { VeiculosFactory } from './factories/VeiculosFactory.js';
-
-/*
-================================================================================
-SUÍTE DE TESTES DE INTEGRAÇÃO - ACORDO COM DOCUMENTAÇÃO (CT-001 A CT-028)
-================================================================================
-
-A API externa de CEP é a única dependência simulada. O restante do fluxo
-(rotas, controllers, models, repositories e MySQL) é exercitado de verdade no
-banco de testes configurado em .env.test e recriado por test/globalSetup.js.
-*/
 
 vi.mock('axios');
 
